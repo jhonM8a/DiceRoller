@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var diceImage : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             */
             rollDice()
         }
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
@@ -32,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             5 ->R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        val diceImage : ImageView = findViewById(R.id.dice_image)
         diceImage.setImageResource(drawableResource)
 
     }
